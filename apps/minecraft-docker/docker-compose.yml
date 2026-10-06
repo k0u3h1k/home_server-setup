@@ -1,0 +1,50 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:java21
+    container_name: minecraft
+    restart: "no"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    ports:
+      - "25565:25565"
+      - "30065:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: FABRIC
+      VERSION: "1.21.11"
+      FABRIC_LOADER_VERSION: "0.18.4"
+      MEMORY: "6G"
+      MODE: survival
+      DIFFICULTY: normal
+      MAX_PLAYERS: "10"
+      VIEW_DISTANCE: "32"
+      SIMULATION_DISTANCE: "16"
+      MOTD: "Home Server - Fabric 1.21.11"
+      SPAWN_PROTECTION: "0"
+      ONLINE_MODE: "FALSE"
+      ENABLE_AUTOPAUSE: "FALSE"
+      AUTOPAUSE_TIMEOUT_EST: "0"
+      OVERRIDE_SERVER_PROPERTIES: "TRUE"
+      REMOVE_OLD_MODS: "FALSE"
+      TZ: Asia/Kolkata
+      JVM_OPTS: >-
+        -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200
+        -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch
+        -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M
+        -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4
+        -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90
+        -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32
+        -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true
+    volumes:
+      - /mnt/storage/minecraft:/data
+
+  mc-status:
+    image: python:3-alpine
+    container_name: mc-status
+    restart: always
+    ports:
+      - "8082:8082"
+    volumes:
+      - /mnt/storage/mc_status_server.py:/app/server.py
+    command: python3 /app/server.py

@@ -1,0 +1,25 @@
+architecture: standalone
+
+auth:
+  enabled: true
+  password: "" # Set at deploy time via: --set auth.password=<your-password>
+
+master:
+  persistence:
+    enabled: true
+    size: 5Gi
+
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+replica:
+  replicaCount: 0
+
+metrics:
+  enabled: false

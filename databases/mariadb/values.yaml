@@ -1,0 +1,24 @@
+auth:
+  rootPassword: "" # Set at deploy time via: --set auth.rootPassword=<your-password>
+  database: nextcloud
+  username: nextcloud
+  password: "" # Set at deploy time via: --set auth.password=<your-password>
+
+architecture: standalone
+
+primary:
+  persistence:
+    enabled: true
+    size: 20Gi
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+
+metrics:
+  enabled: false

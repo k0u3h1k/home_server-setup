@@ -1,0 +1,18 @@
+.DS_Store
+*.swp
+*.swo
+*~
+Thumbs.db
+*.bak
+*.tmp
+
+# Secrets & environment
+*.env
+.env.*
+**/secrets/
+*-secret.yaml
+playit.toml
+
+# Kubernetes & Helm
+kubeconfig*
+**/charts/*.tgz

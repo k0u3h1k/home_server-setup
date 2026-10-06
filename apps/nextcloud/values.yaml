@@ -1,0 +1,71 @@
+nextcloud:
+  host: homeserver.tailb96c63.ts.net
+  username: admin
+  password: "" # Set at deploy time via --set nextcloud.password=<admin-password>
+  resources:
+    requests:
+      cpu: 100m
+      memory: 512Mi
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+  trusted_domains:
+    - homeserver.tailb96c63.ts.net:8443
+  configs:
+    ratelimit.config.php: |-
+      <?php
+      $CONFIG = array (
+        'ratelimit.protection.enabled' => false,
+        'auth.bruteforce.protection.enabled' => false,
+        'auth.bruteforce.max-attempts' => 9999,
+      );
+    overwriteprotocol.config.php: |-
+      <?php
+      $CONFIG = array (
+        'overwriteprotocol' => 'https',
+      );
+
+internalDatabase:
+  enabled: false
+
+mariadb:
+  enabled: false
+
+externalDatabase:
+  enabled: true
+  type: mysql
+  host: mariadb.databases.svc.cluster.local
+  user: nextcloud
+  password: "" # Set at deploy time via --set externalDatabase.password=<db-password>
+  database: nextcloud
+
+redis:
+  enabled: false
+
+externalRedis:
+  enabled: true
+  host: redis-master.databases.svc.cluster.local
+  port: "6379"
+  password: "" # Set at deploy time via --set externalRedis.password=<redis-password>
+
+ingress:
+  enabled: true
+  className: traefik
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+  hosts:
+    - host: homeserver.tailb96c63.ts.net
+      paths:
+        - /
+    - host: nextcloud.lab.local
+      paths:
+        - /
+  tls: []
+
+persistence:
+  enabled: true
+  existingClaim: nextcloud-data
+  size: 256Gi
+
+cronjob:
+  enabled: true
