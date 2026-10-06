@@ -13,8 +13,8 @@ curl -sfL https://tailscale.com/install.sh | sh
 sudo tailscale up
 
 # 2. Clone the repo
-git clone https://github.com/k0u3h1k/Home_server_setup.git
-cd Home_server_setup
+git clone https://github.com/k0u3h1k/home_server-setup.git
+cd home_server-setup
 
 # 3. Run bootstrap
 sudo ./bootstrap.sh
@@ -25,8 +25,8 @@ One-shot from a fresh install:
 ```bash
 curl -sfL https://tailscale.com/install.sh | sh && \
 sudo tailscale up && \
-git clone https://github.com/k0u3h1k/Home_server_setup.git && \
-cd Home_server_setup && \
+git clone https://github.com/k0u3h1k/home_server-setup.git && \
+cd home_server-setup && \
 sudo ./bootstrap.sh
 ```
 

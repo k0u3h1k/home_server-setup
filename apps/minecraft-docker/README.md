@@ -8,7 +8,7 @@ This folder contains the Docker Compose stack for the Minecraft server and a sma
 2. Run the agent from this folder:
 
 ```bash
-cd ~/Home_server_setup/apps/minecraft-docker
+cd ~/home_server-setup/apps/minecraft-docker
 ./playit-start.sh
 ```
 
@@ -23,7 +23,7 @@ Local port: 25565
 4. Start the server:
 
 ```bash
-cd ~/Home_server_setup/apps/minecraft-docker
+cd ~/home_server-setup/apps/minecraft-docker
 ./deploy.sh
 ```
 
@@ -41,7 +41,7 @@ Use `./deploy.sh` the first time, or when the compose file changes.
 In a second terminal, watch status:
 
 ```bash
-cd ~/Home_server_setup/apps/minecraft-docker
+cd ~/home_server-setup/apps/minecraft-docker
 ./status.sh
 ```
 

@@ -40,8 +40,8 @@ curl -sfL https://tailscale.com/install.sh | sh
 sudo tailscale up
 
 # 2. Repo
-git clone https://github.com/k0u3h1k/Home_server_setup.git
-cd Home_server_setup
+git clone https://github.com/k0u3h1k/home_server-setup.git
+cd home_server-setup
 
 # 3. Bootstrap (idempotent, Arch-aware → uses pacman)
 sudo ./bootstrap.sh
@@ -92,7 +92,7 @@ minecraft, backups, storage).
 
 ```bash
 sudo pacman -S samba
-sudo cp ~/Home_server_setup/dotfiles/samba/smb.conf /etc/samba/smb.conf
+sudo cp ~/home_server-setup/dotfiles/samba/smb.conf /etc/samba/smb.conf
 sudo smbpasswd -a "$USER"
 sudo systemctl enable --now smbd nmbd
 ```
@@ -133,4 +133,4 @@ sudo systemctl enable --now smbd nmbd
 - Storage HDD: `/dev/sdb2` (ext4, label `HDD_Storage`, UUID `ef4c5fd2-8174-41c1-b05f-3e4cfbdf5091`)
 - Backup drive: `/dev/sdc1` (ext4, label `Backup`) — mount at `/mnt/backup`
 - Tailnet: `tailb96c63.ts.net`, MagicDNS hostname e.g. `homeserver`
-- Repo: `https://github.com/k0u3h1k/Home_server_setup`
+- Repo: `https://github.com/k0u3h1k/home_server-setup`

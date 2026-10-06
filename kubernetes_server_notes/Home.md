@@ -58,4 +58,4 @@ Power draw: ~15W idle, ~25-30W load (~$20-30/year)
 
 ## Repo
 
-[github.com/k0u3h1k/Home_server_setup](https://github.com/k0u3h1k/Home_server_setup)
+[github.com/k0u3h1k/home_server-setup](https://github.com/k0u3h1k/home_server-setup)

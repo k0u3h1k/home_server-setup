@@ -7,7 +7,7 @@ This is a personal homelab repo, but contributions, ideas, and forks are welcome
 1. Fork the repo
 2. Clone your fork:
    ```bash
-   git clone https://github.com/k0u3h1k/Home_server_setup.git
+   git clone https://github.com/k0u3h1k/home_server-setup.git
    ```
 3. Create a branch:
    ```bash

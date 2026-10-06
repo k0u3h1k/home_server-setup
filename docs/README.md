@@ -2,4 +2,4 @@
 
 Kubernetes (K3s) homelab automated setup and deployment scripts.
 
-Repository: [https://github.com/k0u3h1k/Home_server_setup](https://github.com/k0u3h1k/Home_server_setup)
+Repository: [https://github.com/k0u3h1k/home_server-setup](https://github.com/k0u3h1k/home_server-setup)

@@ -28,8 +28,8 @@ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 Clone the repository and run the interactive setup script on a fresh Debian/Linux installation:
 
 ```bash
-git clone https://github.com/k0u3h1k/Home_server_setup.git
-cd Home_server_setup
+git clone https://github.com/k0u3h1k/home_server-setup.git
+cd home_server-setup
 sudo ./bootstrap.sh
 ```
 
@@ -139,7 +139,7 @@ If you don't have an old All-in-One lying around, here are alternatives that wou
 | **Silence** | If the machine lives in your bedroom/living room, prioritize passive-cooled or large-slow-fan designs. Thin clients and NUCs are nearly silent. Old HDDs are the loudest component. |
 
 ```
-~/Home_server_setup/
+~/home_server-setup/
 ├── apps/                    # Application Helm values & charts
 │   ├── nextcloud/           #   Nextcloud values (external DB)
 │   └── navidrome/           #   Navidrome local Helm chart
